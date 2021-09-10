@@ -1,8 +1,21 @@
 import cv2
 
-img = cv2.imread("Resources/Lenna.png")
+frameWidth = 840
+frameHeight = 680
 
-# Popup images
-cv2.imshow("Lenna", img)
 
-cv2.waitKey(10000) # Hold images (0 = inf)
+#  ' ' -> 0   : WebCam
+cap = cv2.VideoCapture('Resources/KakaoTalk_20200715_210347411.mp4')
+# cap.set(3, frameWidth)
+# cap.set(4,frameHeight)
+
+# Caputre each frame video
+while True:
+    # if sucess, cap frame is save in img
+    sucess, img = cap.read()
+    img = cv2.resize(img, (frameWidth, frameHeight))
+    cv2.imshow("Video", img)
+
+    # 1 -> Runs video by frame by frame
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
