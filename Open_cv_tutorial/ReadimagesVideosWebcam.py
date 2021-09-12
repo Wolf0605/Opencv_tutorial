@@ -19,3 +19,5 @@ while True:
     # 1 -> Runs video by frame by frame
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
+
+    
