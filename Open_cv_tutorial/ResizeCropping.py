@@ -2,12 +2,14 @@ import cv2
 
 path = "Resources/road.jpg"
 img = cv2.imread(path)
+# print(img)
 print(img.shape)
-
+print(img.shape[1]) # width
+print(img.shape[0]) # height
 width ,height = 400 ,400
 # width ,height
 imgResize = cv2.resize(img, (width, height))
-print(imgResize.shape)
+# print(imgResize.shape)
 
 # img[ height, width ]
 imgCropped = img[:, 430: 530]

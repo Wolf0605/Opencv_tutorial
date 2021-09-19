@@ -15,6 +15,7 @@ cv2.circle(img, (150, 400), 50, (255,0,0), cv2.FILLED)
 # cv2.font... ,fontsize, color, thickness
 cv2.putText(img, "Draw Shapes ", (75, 50), cv2.FONT_HERSHEY_COMPLEX,1.5,(255,255,255),3)
 
+
 cv2.imshow("Image", img)
 
 cv2.waitKey(0)
