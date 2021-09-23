@@ -1,12 +1,12 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("Resources/cards.jpg")
+img = cv2.imread("Resources/bookcovers.jpg")
 
 width, height = 250, 350
 
-pts1 = np.float32([[1117,335],[899,187],[878,679],[662,530]])
-pts2 = np.float32([[0,0], [width,0], [height,0], [width,height]])
+pts1 = np.float32([[45 ,38],[390, 8],[79, 526],[428, 497]])
+pts2 = np.float32([[0,0], [width,0], [0, height], [width,height]])
 matrix = cv2.getPerspectiveTransform(pts1,pts2)  # ??
 imgOutput = cv2.warpPerspective(img, matrix, (width, height))
 
@@ -18,5 +18,6 @@ for x in range(0,4):
 
 
 cv2.imshow("Original Image", img)
+cv2.setMouseCallback("Original Image", mousePoints)
 cv2.imshow("Output Image", imgOutput)
 cv2.waitKey(0)
