@@ -40,7 +40,7 @@ while True:
     lower = np.array([h_min, s_min, v_min])
     upper = np.array([h_max, s_max, v_max])
 
-    # Give mask
+    # Give mask What is maks?
     mask = cv2.inRange(imgHsv, lower, upper)
     # Merge Mask and Original Image
     result = cv2.bitwise_and(img, img, mask = mask)
